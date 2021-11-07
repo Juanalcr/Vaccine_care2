@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="includes/base :: css"></head>
+    <body>
+        <header th:replace="includes/base :: navbar"></header>
+
+        <main role="main " class="container">
+            <div th:replace="includes/base :: head-content"></div>
+            <div class="container mt-5">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h5 class="mb-4">Certificate User</h5>
+
+                        <form method="POST" action="#" th:action="@{/certificate/store}" th:object="${certificate}">
+                            <div class="form-group">
+                                <label for="example-certificate-certificate_id">Berikut adalah id certificate anda</label>
+                                <input th:field="*{certificate_id}" type="text" class="form-control" id="example-todo-title" aria-describedby="emailHelp" placeholder="Enter certificate certificate_id" required>
+                                <small id="emailHelp" class="form-text text-muted">Terima kasih telah melawan covid dengan cara vaksin!.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="example-certificate-status">Status vaksin anda sekarang</label>
+                                <textarea th:field="*{status}" rows="3" class="form-control" id="example-todo-desc" aria-describedby="emailHelp" placeholder="Enter certificate status"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">belum vaksin atau sudah vaksin?.</small>
+                            </div>
+                            
+                             <div class="form-group">
+                                <label for="example-certificate-name">Nama Anda</label>
+                                <textarea th:field="*{name}" rows="3" class="form-control" id="example-todo-desc" aria-describedby="emailHelp" placeholder="Enter certificate name"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Bertujuan untuk data anda nanti.</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="example-certificate-service_place">Tempat penanganan vaksin anda</label>
+                                <textarea th:field="*{service_place}" rows="3" class="form-control" id="example-todo-desc" aria-describedby="emailHelp" placeholder="Enter certificate service_place"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Bertujuan untuk data anda nanti.</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>

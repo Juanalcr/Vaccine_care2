@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="includes/base :: css"></head>
+    <body>
+        <header th:replace="includes/base :: navbar"></header>
+
+        <main role="main " class="container">
+            <div th:replace="includes/base :: head-content"></div>
+            <div class="container mt-5">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <h5 class="mb-4">Pembuatan Data Vaccine</h5>
+
+                        <form method="POST" action="#" th:action="@{/certificate/store}" th:object="${certificate}">
+                            <div class="form-group">
+                                <label for="example-certificate-vaccine_type">Tuliskan Tipe Vaksin Anda</label>
+                                <input th:field="*{vaccine_type}" type="text" class="form-control" id="example-todo-title" aria-describedby="emailHelp" placeholder="Enter certificate vaccine_type" required>
+                                <small id="emailHelp" class="form-text text-muted">Jenis Vaccine yang tersedia ada sinovac dan astrazeneca.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="example-certificate-location_id">Tulis Id Lokasi Daerah Anda</label>
+                                <textarea th:field="*{location_id}" rows="3" class="form-control" id="example-todo-desc" aria-describedby="emailHelp" placeholder="Enter certificate location_id"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Bertujuan untuk kami data lokasi daerah anda.</small>
+                            </div>
+                            
+                             <div class="form-group">
+                                <label for="example-certificate-birth_date">Tuliskan Tanggal Lahir Anda</label>
+                                <textarea th:field="*{birth_date}" rows="3" class="form-control" id="example-todo-desc" aria-describedby="emailHelp" placeholder="Enter certificate birth_date"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Bertujuan untuk data anda nanti.</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="example-certificate-gender">Masukkan Gender Anda</label>
+                                <textarea th:field="*{gender}" rows="3" class="form-control" id="example-todo-desc" aria-describedby="emailHelp" placeholder="Enter certificate gender"></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Bertujuan untuk data anda nanti.</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div th:replace="includes/base  :: footer"></div>
+        <div th:replace="includes/base  :: scripts"></div>
+    </body>
+</html>
